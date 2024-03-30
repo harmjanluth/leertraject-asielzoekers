@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/halfmoon/css/halfmoon.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+    body { font-family: "Poppins", sans-serif; font-size: 90%; }
+        .contract-preview { padding: 50px; }
+        .contract-preview p { margin: 0; }
+        .contract-preview h2, h3, h4, h5 { margin-top: 30px; }
+    </style>
+    <title>Leertraject Contract Formulier</title>
+</head>
+<body>
+    <header class="container my-20">
+        <h1>Aan de slag met asielzoekers</h1>
+        <h2>Jouw snelle start voor een leertraject</h2>
+        <p>
+            Zie je door de bureaucratische bomen het bos niet meer? De overheid maakt er inderdaad een enorme potje van. Wij helpen ondernemers en asielzoekers om samen te werken. Door gebruik te maken van het onderstaande formulier kun je eenvoudig een leertraject tussen de ondernemer en een asielzoeker.
+            <br/><strong>Belangrijk: check altijd even bij je verzekering of de leerling in deze situatie verzekerd is tegen ongevallen.</strong>
+        </p>
+
+    </header>
+    <main class="container my-20">
+        <h2>Contract genereren</h2>
+        <p>Vul onderstaande gegevens in om een contract te genereren. De data wordt nergens online opgeslagen.</p>
+        <form id="contractForm" onsubmit="event.preventDefault();" class="w-400 mw-full">
+            <div>
+                <label for="leertraject">Leertraject:</label>
+                <input type="text" id="leertraject" name="leertraject">
+                <p>De specifieke naam of aanduiding van het leertraject.</p>
+            </div>
+
+            <div>
+                <label for="taken">Taken:</label>
+                <textarea id="taken" name="taken" placeholder="Voer hier de taken in, per taak 1 regel"></textarea>
+                <p>Specifieke taken of werkzaamheden die de leerling uitvoert als onderdeel van het leertraject. Deze lijst kan uitgebreid of ingekort worden afhankelijk van de behoeften van het traject.</p>
+            </div>
+
+            <div>
+                <label for="rooster">Rooster:</label>
+                <textarea id="rooster" name="rooster" placeholder="Voer hier de dagen van de week en tijden in, per dag 1 regel"></textarea>
+                <p>De dagen en tijden waarop de leerling de taken uitvoert.</p>
+            </div>
+    
+            <div>
+                <label for="ondernemer">Ondernemer (bedrijfsnaam):</label>
+                <input type="text" id="ondernemer" name="ondernemer">
+                <p>De naam van het bedrijf of de organisatie die de leerling in dienst neemt.</p>
+            </div>
+    
+            <div>
+                <label for="activiteiten_ondernemer">Activiteiten van de ondernemer:</label>
+                <input type="text" id="activiteiten_ondernemer" name="activiteiten_ondernemer">
+                <p>Hoofdactiviteiten of de branche waarin de onderneming opereert.</p>
+            </div>
+    
+            <div>
+                <label for="adres_onderneming">Adres onderneming:</label>
+                <input type="text" id="adres_onderneming" name="adres_onderneming">
+                <p>Het volledige adres van de locatie van de onderneming.</p>
+            </div>
+    
+            <div>
+                <label for="praktijkbegeleider">Praktijkbegeleider:</label>
+                <input type="text" id="praktijkbegeleider" name="praktijkbegeleider">
+                <p>De volledige naam van de persoon die als praktijkbegeleider fungeert.</p>
+            </div>
+    
+            <div>
+                <label for="leerbegeleider">Leerbegeleider:</label>
+                <input type="text" id="leerbegeleider" name="leerbegeleider">
+                <p>De volledige naam van de leerbegeleider betrokken bij het leertraject vanuit een begeleidende organisatie.</p>
+            </div>
+    
+            <div>
+                <label for="leerling">Leerling:</label>
+                <input type="text" id="leerling" name="leerling">
+                <p>De volledige naam van de leerling die het leertraject volgt.</p>
+            </div>
+    
+            <div>
+                <label for="periode">Periode:</label>
+                <input type="text" id="periode" name="periode">
+                <p>De looptijd van het leertraject, uitgedrukt in een begin- en einddatum.</p>
+            </div>
+    
+            <div>
+                <label for="contact_coa">Contact COA:</label>
+                <input type="text" id="contact_coa" name="contact_coa">
+                <p>De naam of contactgegevens van de vertegenwoordiger van het COA die als contactpersoon dient.</p>
+            </div>
+    
+            <button type="submit" onclick="generateMarkdown()">Genereer & Print contract</button>
+        </form>
+    </main>
+
+    <script>
+
+        var contractTemplate = '';
+
+        function replaceVariables(template, variables) {
+            let result = template;
+            for (const [key, value] of Object.entries(variables)) {
+                result = result.replace(new RegExp(`{{${key}}}`, 'g'), value);
+            }
+            return result;
+        }
+
+         function generateMarkdown() {
+            // Haal waarden op uit het formulier
+            const formElements = document.getElementById('contractForm').elements;
+            const formData = {};
+            for (let i = 0; i < formElements.length; i++) {
+                if ((formElements[i].tagName === 'INPUT' && formElements[i].type === 'text') || formElements[i].tagName === 'TEXTAREA') {
+                    formData[formElements[i].name] = formElements[i].value;
+                }
+            }
+            document.body.innerHTML = replaceVariables(contractTemplate, formData);
+            setTimeout(()=>{
+                print()
+            }, 300);
+        }
+
+        async function fetchMarkdown() {
+            try {
+                const response = await fetch('contract.htm');
+                if (!response.ok) throw new Error('Document kon niet worden opgehaald.');
+                contractTemplate = await response.text();
+            } catch (error) {
+                console.error('Fout bij het ophalen van het Markdown-document:', error);
+                document.getElementById('markdownContent').textContent = 'Fout bij het laden van het document.';
+            }
+        }
+
+        fetchMarkdown();
+    </script>
+
+</body>
+</html>
