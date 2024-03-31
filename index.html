@@ -128,7 +128,7 @@
 
         async function fetchMarkdown() {
             try {
-                const response = await fetch('contract.htm');
+                const response = await fetch('contract.html');
                 if (!response.ok) throw new Error('Document kon niet worden opgehaald.');
                 contractTemplate = await response.text();
             } catch (error) {
