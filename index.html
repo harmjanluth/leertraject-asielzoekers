@@ -217,13 +217,15 @@
                 <p>De naam of contactgegevens van de vertegenwoordiger van het COA die als contactpersoon dient.</p>
             </div>
 
-            <button type="submit" onclick="generateMarkdown()">Genereer & Print contract</button>
+            <button type="submit" id="submit">Genereer & Print contract</button>
         </form>
     </main>
 
     <script>
 
         var contractTemplate = '';
+
+        document.getElementById("submit").onclick = generateMarkdown;
 
         function replaceVariables(template, variables) {
             let result = template;
@@ -262,5 +264,4 @@
     </script>
 
 </body>
-
 </html>
