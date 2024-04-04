@@ -1,100 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/halfmoon/css/halfmoon.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <style>
-    body { font-family: "Poppins", sans-serif; font-size: 90%; }
-        .contract-preview { padding: 50px; }
-        .contract-preview p { margin: 0; }
-        .contract-preview h2, h3, h4, h5 { margin-top: 30px; }
+        body {
+            font-family: "Poppins", sans-serif;
+            font-size: 90%;
+            max-width: 680px;
+            min-width: 320px;
+            margin: 0 auto;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        h1 { margin-bottom: 50px;}
+
+        .contract-preview {
+            padding: 30px;
+        }
+
+        .contract-preview p {
+            margin: 0;
+        }
+
+        .contract-preview h2,
+        h3,
+        h4,
+        h5 {
+            margin-top: 30px;
+        }
+
+        h3, h4 {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        p { line-height: 150%; margin-top: 5px; }
+
+        .wizard {
+            margin-top: 50px;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        .wizard h2 {
+            margin-top: 0;
+        }
+
+        form > div {
+            margin-bottom: 2rem;
+        }
+
+        form > div label {
+            display: block;
+            font-weight: 500;
+        }
+
+        form > div p {
+            font-size: 88%;
+            color: #777;
+        }
+
+        form > div input,
+        form > div textarea {
+            min-width: 260px;
+            padding: 4px 6px;
+        }
+
+        @media print {
+            body {
+                width: 100% !important;
+            }
+
+            .intro-text {
+                display: none;
+            }
+            
+            .contract-preview {
+                padding: 10px;
+            }
+        }
     </style>
-    <title>Leertraject Contract Formulier</title>
+    <title>Aan de slag met asielzoekers</title>
 </head>
+
 <body>
-    <header class="container my-20">
-        <h1>Aan de slag met asielzoekers</h1>
-        <h2>Jouw snelle start voor een leertraject</h2>
+    <header class="container intro-text my-20">
+        <h1>Op zoek naar personeel? Ga eenvoudig aan de slag met asielzoekers! </h1>
+        <h2>Gebruik een leertrajectovereenkomst</h2>
+
+        <p>U bent als ondernemer op zoek naar personeel, maar dat is in deze krappe arbeidsmarkt moeilijk te krijgen.
+            Asielzoekers zouden hier een rol in kunnen spelen, waar een win-win-win situatie kan ontstaan. Goed voor u,
+            goed voor de asielzoeker en de maatschappij.</p>
+
         <p>
-            Zie je door de bureaucratische bomen het bos niet meer? De overheid maakt er inderdaad een enorme potje van. Wij helpen ondernemers en asielzoekers om samen te werken. Door gebruik te maken van het onderstaande formulier kun je eenvoudig een leertraject tussen de ondernemer en een asielzoeker.
-            <br/><strong>Belangrijk: check altijd even bij je verzekering of de leerling in deze situatie verzekerd is tegen ongevallen.</strong>
+            Maar hoe doet u dat? En hoe komt u erachter of de match goed is? De overheid maakt het er bepaald niet
+            makkelijk op, met de verschillende instanties die slecht samenwerken; IND, gemeentes, UWV, COA.
+        </p>
+
+        <h3>Mijn tip</h3>
+        <p>
+            Gebruik een leertrajectovereenkomst. Dit dekt al uw risico’s af en u kunt samen ontdekken of er een goede
+            arbeidsrelatie ontstaat. In mijn ervaring zijn een groot aantal asielzoekers zeer gemotiveerd om te werken
+            en zullen ze dit ook aan u willen bewijzen. Alle trajecten die ik heb in gezet bij meubelmakers en
+            fietsenmakers zijn succesvol verlopen.
+        </p>
+
+        <h3>
+            Het allerbelangrijkste nog
+        </h3>
+        <p>Overleg met uw accountant of mensen binnen een stage / leertrajectovereenkomst verzekerd zijn voor
+            ongevallen. Vaak is dit wel geregeld binnen MKB, maar het is belangrijk dit echt zeker te weten.
+            Het is daarin essentieel dat de asielzoeker al wel in bezit is van een W-document.
+        </p>
+
+        <h3>
+            Wat als het goed gaat?
+        </h3>
+        <p>Wij raden u aan om 3 - 6 maanden een leertraject in te zetten om vervolgens te gaan kijken hoe u de
+            asielzoeker een echte baan aan kunt bieden. Dan komen er verschillende overheidsinstanties op uw pad waar u
+            binnen zult navigeren, ook daar kan ik in adviseren (pro-deo) over Whatsapp bijvoorbeeld.
+        </p>
+
+
+        <h4>Nog vragen?</h4>
+        <p>
+            Dit is een vrijwillig initiatief. Als u vragen hebt, kan ik deze proberen te beantwoorden via 024-2340342.
+            Geef a.u.b. wel even aan dat het om dit initiatief gaat, dit is een bedrijfstelefoon van feestjegeven.nl.
         </p>
 
     </header>
-    <main class="container my-20">
-        <h2>Contract genereren</h2>
+    <main class="container my-20 wizard" id="contract-area">
+        <h2>Leertrajectovereenkomst genereren</h2>
         <p>Vul onderstaande gegevens in om een contract te genereren. De data wordt nergens online opgeslagen.</p>
         <form id="contractForm" onsubmit="event.preventDefault();" class="w-400 mw-full">
             <div>
-                <label for="leertraject">Leertraject:</label>
+                <label for="leertraject">Leertraject</label>
                 <input type="text" id="leertraject" name="leertraject">
                 <p>De specifieke naam of aanduiding van het leertraject.</p>
             </div>
 
             <div>
-                <label for="taken">Taken:</label>
+                <label for="taken">Taken</label>
                 <textarea id="taken" name="taken" placeholder="Voer hier de taken in, per taak 1 regel"></textarea>
-                <p>Specifieke taken of werkzaamheden die de leerling uitvoert als onderdeel van het leertraject. Deze lijst kan uitgebreid of ingekort worden afhankelijk van de behoeften van het traject.</p>
+                <p>Specifieke taken of werkzaamheden die de leerling uitvoert als onderdeel van het leertraject. Deze
+                    lijst kan uitgebreid of ingekort worden afhankelijk van de behoeften van het traject.</p>
             </div>
 
             <div>
-                <label for="rooster">Rooster:</label>
-                <textarea id="rooster" name="rooster" placeholder="Voer hier de dagen van de week en tijden in, per dag 1 regel"></textarea>
+                <label for="rooster">Rooster</label>
+                <textarea id="rooster" name="rooster"
+                    placeholder="Voer hier de dagen van de week en tijden in, per dag 1 regel"></textarea>
                 <p>De dagen en tijden waarop de leerling de taken uitvoert.</p>
             </div>
-    
+
             <div>
-                <label for="ondernemer">Ondernemer (bedrijfsnaam):</label>
+                <label for="ondernemer">Ondernemer (bedrijfsnaam)</label>
                 <input type="text" id="ondernemer" name="ondernemer">
                 <p>De naam van het bedrijf of de organisatie die de leerling in dienst neemt.</p>
             </div>
-    
+
             <div>
-                <label for="activiteiten_ondernemer">Activiteiten van de ondernemer:</label>
+                <label for="activiteiten_ondernemer">Activiteiten van de ondernemer</label>
                 <input type="text" id="activiteiten_ondernemer" name="activiteiten_ondernemer">
                 <p>Hoofdactiviteiten of de branche waarin de onderneming opereert.</p>
             </div>
-    
+
             <div>
-                <label for="adres_onderneming">Adres onderneming:</label>
+                <label for="adres_onderneming">Adres onderneming</label>
                 <input type="text" id="adres_onderneming" name="adres_onderneming">
                 <p>Het volledige adres van de locatie van de onderneming.</p>
             </div>
-    
+
             <div>
-                <label for="praktijkbegeleider">Praktijkbegeleider:</label>
+                <label for="praktijkbegeleider">Praktijkbegeleider</label>
                 <input type="text" id="praktijkbegeleider" name="praktijkbegeleider">
                 <p>De volledige naam van de persoon die als praktijkbegeleider fungeert.</p>
             </div>
-    
+
             <div>
-                <label for="leerbegeleider">Leerbegeleider:</label>
+                <label for="leerbegeleider">Leerbegeleider</label>
                 <input type="text" id="leerbegeleider" name="leerbegeleider">
-                <p>De volledige naam van de leerbegeleider betrokken bij het leertraject vanuit een begeleidende organisatie.</p>
+                <p>De volledige naam van de leerbegeleider betrokken bij het leertraject vanuit een begeleidende
+                    organisatie.</p>
             </div>
-    
+
             <div>
-                <label for="leerling">Leerling:</label>
+                <label for="leerling">Leerling</label>
                 <input type="text" id="leerling" name="leerling">
                 <p>De volledige naam van de leerling die het leertraject volgt.</p>
             </div>
-    
+
             <div>
-                <label for="periode">Periode:</label>
+                <label for="leerling">W-document nummer</label>
+                <input type="text" id="wdocument" name="wdocument">
+                <p>Het nummer van het W-document ter identificatie.</p>
+            </div>
+
+            <div>
+                <label for="periode">Periode</label>
                 <input type="text" id="periode" name="periode">
                 <p>De looptijd van het leertraject, uitgedrukt in een begin- en einddatum.</p>
             </div>
-    
+
             <div>
-                <label for="contact_coa">Contact COA:</label>
+                <label for="contact_coa">Contact COA</label>
                 <input type="text" id="contact_coa" name="contact_coa">
                 <p>De naam of contactgegevens van de vertegenwoordiger van het COA die als contactpersoon dient.</p>
             </div>
-    
+
             <button type="submit" onclick="generateMarkdown()">Genereer & Print contract</button>
         </form>
     </main>
@@ -111,7 +233,7 @@
             return result;
         }
 
-         function generateMarkdown() {
+        function generateMarkdown() {
             // Haal waarden op uit het formulier
             const formElements = document.getElementById('contractForm').elements;
             const formData = {};
@@ -120,8 +242,8 @@
                     formData[formElements[i].name] = formElements[i].value;
                 }
             }
-            document.body.innerHTML = replaceVariables(contractTemplate, formData);
-            setTimeout(()=>{
+            document.getElementById('contract-area').innerHTML = replaceVariables(contractTemplate, formData);
+            setTimeout(() => {
                 print()
             }, 300);
         }
@@ -133,7 +255,6 @@
                 contractTemplate = await response.text();
             } catch (error) {
                 console.error('Fout bij het ophalen van het Markdown-document:', error);
-                document.getElementById('markdownContent').textContent = 'Fout bij het laden van het document.';
             }
         }
 
@@ -141,4 +262,5 @@
     </script>
 
 </body>
+
 </html>
